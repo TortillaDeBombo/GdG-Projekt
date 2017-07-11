@@ -1,0 +1,117 @@
+{
+  "background": [
+  {"start": 16.677, "duration": 2.760, "value": 90, "easing": "sine_in"},
+  {"start": 19.522, "duration": 0.444, "value": 0, "easing": "sine_out"},
+  {"start": 20.400, "duration": 0.550, "value": 45, "easing": "sine_in"},
+  {"start": 20.951, "duration": 0.300, "value": 0, "easing": "sine_out"},
+  {"start": 21.400, "duration": 0.550, "value": 40, "easing": "sine_in"},
+  {"start": 21.951, "duration": 0.300, "value": 0, "easing": "sine_out"},
+  {"start": 22.400, "duration": 0.550, "value": 35, "easing": "sine_in"},
+  {"start": 22.951, "duration": 0.300, "value": 0, "easing": "sine_out"},
+  {"start": 23.400, "duration": 0.550, "value": 30, "easing": "sine_in"},
+  {"start": 23.951, "duration": 0.300, "value": 0, "easing": "sine_out"},
+  {"start": 24.400, "duration": 0.550, "value": 25, "easing": "sine_in"},
+  {"start": 24.951, "duration": 0.300, "value": 0, "easing": "sine_out"},
+  {"start": 25.400, "duration": 0.550, "value": 20, "easing": "sine_in"},
+  {"start": 25.951, "duration": 0.300, "value": 0, "easing": "sine_out"},
+  {"start": 26.400, "duration": 0.550, "value": 15, "easing": "sine_in"},
+  {"start": 26.951, "duration": 0.300, "value": 0, "easing": "sine_out"},
+  {"start": 27.400, "duration": 0.550, "value": 10, "easing": "sine_in"},
+  {"start": 27.951, "duration": 0.300, "value": 0, "easing": "sine_out"},
+  {"start": 28.400, "duration": 0.550, "value": 5, "easing": "sine_in"},
+  {"start": 28.951, "duration": 0.300, "value": 0, "easing": "sine_out"}
+  ],
+  "particlesToSpawn": [
+  {"start": 2.234, "duration": 0.001, "value": 30, "easing": "linear"},
+  {"start": 2.645, "duration": 0.001, "value": 30, "easing": "linear"},
+  {"start": 3.045, "duration": 0.001, "value": 30, "easing": "linear"},
+  {"start": 3.872, "duration": 0.001, "value": 30, "easing": "linear"},
+  {"start": 4.142, "duration": 0.001, "value": 30, "easing": "linear"},
+  {"start": 4.417, "duration": 0.001, "value": 30, "easing": "linear"},
+  {"start": 4.824, "duration": 0.001, "value": 30, "easing": "linear"},
+  {"start": 5.231, "duration": 0.001, "value": 30, "easing": "linear"},
+  {"start": 6.051, "duration": 0.001, "value": 30, "easing": "linear"},
+  {"start": 6.322, "duration": 0.001, "value": 30, "easing": "linear"},
+  {"start": 6.593, "duration": 0.001, "value": 30, "easing": "linear"},
+  {"start": 7.008, "duration": 0.001, "value": 30, "easing": "linear"},
+  {"start": 7.417, "duration": 0.001, "value": 30, "easing": "linear"},
+  {"start": 8.232, "duration": 0.001, "value": 30, "easing": "linear"},
+  {"start": 8.503, "duration": 0.001, "value": 30, "easing": "linear"},
+  {"start": 8.779, "duration": 0.001, "value": 30, "easing": "linear"},
+  {"start": 9.194, "duration": 0.001, "value": 30, "easing": "linear"},
+  {"start": 9.599, "duration": 0.001, "value": 30, "easing": "linear"},
+  {"start": 10.403, "duration": 0.001, "value": 30, "easing": "linear"},
+  {"start": 10.679, "duration": 0.001, "value": 30, "easing": "linear"},
+  {"start": 10.956, "duration": 0.001, "value": 30, "easing": "linear"},
+  {"start": 11.370, "duration": 0.001, "value": 30, "easing": "linear"},
+  {"start": 11.765, "duration": 0.001, "value": 30, "easing": "linear"},
+  {"start": 12.594, "duration": 0.001, "value": 30, "easing": "linear"},
+  {"start": 12.871, "duration": 0.001, "value": 30, "easing": "linear"},
+  {"start": 13.147, "duration": 0.001, "value": 30, "easing": "linear"},
+  {"start": 13.561, "duration": 0.001, "value": 30, "easing": "linear"},
+  {"start": 13.956, "duration": 0.001, "value": 30, "easing": "linear"},
+  {"start": 14.766, "duration": 0.001, "value": 30, "easing": "linear"},
+  {"start": 15.042, "duration": 0.001, "value": 30, "easing": "linear"},
+  {"start": 15.338, "duration": 0.001, "value": 30, "easing": "linear"},
+  {"start": 15.753, "duration": 0.001, "value": 30, "easing": "linear"},
+  {"start": 16.147, "duration": 0.001, "value": 30, "easing": "linear"},
+  {"start": 16.957, "duration": 0.001, "value": 30, "easing": "linear"},
+  {"start": 17.233, "duration": 0.001, "value": 30, "easing": "linear"},
+  {"start": 17.509, "duration": 0.001, "value": 30, "easing": "linear"},
+  {"start": 17.944, "duration": 0.001, "value": 30, "easing": "linear"},
+  {"start": 18.339, "duration": 0.001, "value": 30, "easing": "linear"}
+  ],
+  "Circles": [
+  {"start": 1.000, "duration": 0.001, "value": 1, "easing": "linear"},
+  {"start": 1.000, "duration": 0.001, "value": 1, "easing": "linear"},
+  {"start": 1.000, "duration": 0.001, "value": 1, "easing": "linear"}    
+  ],
+
+  
+  "Data": [
+  {"xPos": 1200, "yPos": 500, "color": 250, "weight": 25.0f, "radius": 20f},
+  {"xPos": 1200, "yPos": 300, "color": 150, "weight": 250.0f, "radius": 200f}, 
+  {"xPos": 1200, "yPos": 300, "color": 0, "weight": 25.0f, "radius": 20f} 
+  ],
+  
+  "Velocity": [
+  {"x":  -7, "y":  0},
+  {"x":  -7, "y":  0},
+  {"x":  -7, "y":  0}  
+  ]
+  
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

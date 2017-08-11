@@ -1,0 +1,25 @@
+grauschema
+		r	g	b
+farbe1		179	187	190
+farbe2		69	89	84
+farbe3		238	238	242
+farbe4		227	228	230
+
+
+lagerfeuerschema
+
+		r	g	b
+farbe1		208	56	26
+farbe2		250	255	175
+farbe3		237	192	128
+farbe4		222	125	78
+
+
+
+strandschema
+
+		r	g	b
+farbe1		242	243	238
+farbe2		36	169	247
+farbe3		218	250	255
+farbe4		202	230	30

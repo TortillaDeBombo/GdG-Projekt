@@ -15,13 +15,11 @@ public class CustomAnimationCircle {
 	public Easing mode;
 	public float weight;
 	
-	CustomAnimationCircle(int xPos, int yPos, int color, float weight, float radius, String params){
+	CustomAnimationCircle(int xPos, int yPos, float weight, String params){
 		
 		this.xPos = xPos;
 		this.yPos = yPos;
-		this.color = color;
 		this.weight = weight;
-		this.radius = radius;
 		this.params = params;
 		
 	}
@@ -34,17 +32,10 @@ public class CustomAnimationCircle {
 		return yPos;
 	}
 	
-	public int getColor(){
-		return color;
-	}
-	
 	public float getWeight(){
 		return weight;
 	}
 	
-	public float getRadius(){
-		return radius;
-	}
 
 	
 	

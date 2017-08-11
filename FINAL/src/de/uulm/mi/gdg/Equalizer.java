@@ -27,6 +27,10 @@ public class Equalizer extends PApplet {
 	private static Player player;
 	private static FFT fft;
 	private float background = 17;
+	private static Minim minim;
+        private static AudioPlayer player2;
+        private String Farbe;
+	
 
 	public void settings() {
 
@@ -35,9 +39,10 @@ public class Equalizer extends PApplet {
 	}
 
 	public void setup() {
-		
+		minim = new Minim(this);
+		player2 = minim.loadFile("./data/03Atlantis.mp3");
 		gui = new GUI(this, new Player(this, "./data/03Atlantis.mp3"));
-
+                player = new Player(this, "./data/03Atlantis.mp3");
 		fft = gui.audioPlayer.getFFT();
 
 		spectra = new ArrayList<>();
@@ -61,6 +66,36 @@ public class Equalizer extends PApplet {
 
 		background(background);
 
+		fft.forward(player.getSong().mix);
+		float jitter = fft.getBand(1);
+		
+		
+		pushMatrix();
+	          stroke(200);
+	         for (int i = 0; i < player2.bufferSize() - 1; i++) {
+	      float x1 = PApplet.map(i, 0, player2.bufferSize(), 0, width);
+	      float x2 = PApplet.map(i + 1, 0, player2.bufferSize(), 0, width);
+	      line(x1, 260 + player2.left.get(i) * 25, x2, 260 + player2.left.get(i + 1) * 25);
+	      line(x1, 310 + player2.right.get(i) * 25, x2, 310 + player2.right.get(i + 1) * 25);
+	      line(x1, 360 + player2.left.get(i) * 25, x2, 360 + player2.left.get(i + 1) * 25);
+	      line(x1, 410 + player2.right.get(i) * 25, x2, 410 + player2.right.get(i + 1) * 25);
+	      line(x1, 460 + player2.left.get(i) * 25, x2, 460 + player2.left.get(i + 1) * 25);
+	      
+	    }
+	    popMatrix();
+	    
+	    pushMatrix();
+	    stroke(80);
+	    for (int i = 0; i < player2.bufferSize() - 1; i++) {
+	      float x1 = PApplet.map(i, 0, player2.bufferSize(), 0, width);
+	      float x2 = PApplet.map(i + 1, 0, player2.bufferSize(), 0, width);
+	      line(x1, 160 + player2.left.get(i) * 25, x2, 160 + player2.left.get(i + 1) * 25);
+	      line(x1, 210 + player2.right.get(i) * 25, x2, 210 + player2.right.get(i + 1) * 25);
+	      line(x1, 510 + player2.left.get(i) * 25, x2, 510 + player2.left.get(i + 1) * 25);
+	      
+	    }
+	    popMatrix();
+		
 		float val;
 		for (int i = 0; i < fft.specSize(); i++) {
 			val = gui.audioPlayer.getSong().left.get(i);
@@ -75,7 +110,7 @@ public class Equalizer extends PApplet {
 		}
 
 		for (Spectrum s : spectra) {
-			s.display();
+			//s.display();
 		}
 		
 		circles.update(gui.audioPlayer.getSong().position());
@@ -84,7 +119,14 @@ public class Equalizer extends PApplet {
 	}
 	public void controlEvent(ControlEvent theEvent) {
 		if(theEvent.getController().getName().equalsIgnoreCase("start")) {
-			circles.startAnimation();
+			if(theEvent.getController().getName().equalsIgnoreCase("Schema1")){
+				circles.startAnimation("Schema1");
+			}
+			if(theEvent.getController().getName().equalsIgnoreCase("Schema2")){
+				circles.startAnimation("Schema2");
+			}else{
+				circles.startAnimation("Schema3");
+			}
 			blinker.startAnimation();
 			gui.audioPlayer.togglePlaying();
 			gui.cp5.hide();
@@ -111,20 +153,20 @@ public class Equalizer extends PApplet {
 			cp5 = new ControlP5(canvas);
 
 			cp5.addButton("start").setPosition(width/2+125, height - 175)
-					.setImages(loadImage("start.png"), loadImage("startgedrückt.png"), loadImage("start.png"))
+					.setImages(loadImage("start.png"), loadImage("startgedrÃ¼ckt.png"), loadImage("start.png"))
 					.updateSize();
 			cp5.addButton("reflexion").setPosition(width/2-200, height - 175).setImages(loadImage("Reflexion.png"),
-					loadImage("Reflexion gedrückt.png"), loadImage("Reflexion.png")).updateSize();
+					loadImage("Reflexion gedrÃ¼ckt.png"), loadImage("Reflexion.png")).updateSize();
 			cp5.addButton("Farbauswahl").setPosition(width / 2 - 120, 90).setImages(loadImage("Farbanzeige3.png"),
 					loadImage("Farbanzeige2.png"), loadImage("Farbanzeige1.png")).updateSize();
 			cp5.addButton("Schema1").setPosition(width/2-200, height / 2).setImages(loadImage("Schemaauswahl1.png"),
-					loadImage("Schemaauswahl1 gedrückt.png"), loadImage("Schemaauswahl1.png")).plugTo("scheme1")
+					loadImage("Schemaauswahl1 gedrÃ¼ckt.png"), loadImage("Schemaauswahl1.png")).plugTo("scheme1")
 					.updateSize();
 			cp5.addButton("Schema2").setPosition(((width/2+125)+width/2-200)/2, height / 2).setImages(loadImage("Schemaauswahl2.png"),
-					loadImage("Schemaauswahl2 gedrückt.png"), loadImage("Schemaauswahl2.png")).plugTo("scheme2")
+					loadImage("Schemaauswahl2 gedrÃ¼ckt.png"), loadImage("Schemaauswahl2.png")).plugTo("scheme2")
 					.updateSize();
 			cp5.addButton("Schema3").setPosition(width/2+125, height / 2).setImages(loadImage("Schemaauswahl3.png"),
-					loadImage("Schemaauswahl3 gedrückt.png"), loadImage("Schemaauswahl3.png")).plugTo("scheme3")
+					loadImage("Schemaauswahl3 gedrÃ¼ckt.png"), loadImage("Schemaauswahl3.png")).plugTo("scheme3")
 					.updateSize();
 			
 		}

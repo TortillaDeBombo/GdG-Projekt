@@ -9,7 +9,7 @@ public class CustomAnimationVelocity {
 	public String params;
 	
 	
-	CustomAnimationVelocity(int xPos, int yPos, String params){
+	public CustomAnimationVelocity(int xPos, int yPos, String params){
 		
 		this.xPos = xPos;
 		this.yPos = yPos;

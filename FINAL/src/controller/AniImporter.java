@@ -2,6 +2,7 @@ package controller;
 
 import de.looksgood.ani.AniConstants;
 import de.looksgood.ani.easing.Easing;
+import de.uulm.mi.gdg.Equalizer.GUI;
 import processing.core.PApplet;
 import processing.data.JSONArray;
 import processing.data.JSONObject;
@@ -37,31 +38,17 @@ public class AniImporter {
 			JSONObject o = backgroundAnimations.getJSONObject(i);
 			int xPos = o.getInt("xPos");
 			int yPos = o.getInt("yPos");
-			float weight = o.getFloat("weight");
-
+			/*
+			 * int color = o.getInt("color"); float radius = o.getFloat("radius"); float
+			 * weight = o.getFloat("weight");
+			 */
 			// anis2.add(new CustomAnimationCircle(start, duration, type , value, easing,
 			// xPos, yPos, color, radius));
-			anis2.add(new CustomAnimationCircle(xPos, yPos, weight, type));
+			anis2.add(new CustomAnimationCircle(xPos, yPos, type));
 		}
 		return anis2;
 	}
-	
-	public static ArrayList<CustomAnimationVelocity> importAnimationVelocity(PApplet parent, String filePath, String type){
-		JSONObject file = parent.loadJSONObject(filePath);
-		JSONArray backgroundAnimations = file.getJSONArray(type);
-		
-		ArrayList<CustomAnimationVelocity> anis3 = new ArrayList<>();
-		for (int i = 0; i < backgroundAnimations.size(); i++){
-			JSONObject o = backgroundAnimations.getJSONObject(i);
-			int xPos = o.getInt("x");
-			int yPos = o.getInt("y");		
-			
-			//anis2.add(new CustomAnimationCircle(start, duration, type , value, easing, xPos, yPos, color, radius));
-			anis3.add(new CustomAnimationVelocity(xPos, yPos, type));
-		}
-		return anis3;
-	}
-	
+
 	public static ArrayList<CustomAnimationColor> importAnimationColor(PApplet parent, String filePath, String type){
 		JSONObject file = parent.loadJSONObject(filePath);
 		JSONArray backgroundAnimations = file.getJSONArray(type);
@@ -78,6 +65,7 @@ public class AniImporter {
 		}
 		return anis4;
 	}
+
 
 	private static Easing determineEasing(String ease) {
 		Easing e;

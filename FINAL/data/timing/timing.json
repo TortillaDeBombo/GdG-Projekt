@@ -1,5 +1,6 @@
 {
-  "background": [
+
+"background": [
   {"start": 16.677, "duration": 2.760, "value": 90, "easing": "sine_in"},
   {"start": 19.522, "duration": 0.444, "value": 0, "easing": "sine_out"},
   {"start": 20.400, "duration": 0.550, "value": 45, "easing": "sine_in"},
@@ -173,7 +174,6 @@
   {"x":  -1, "y":  0} 
   ],
   
-  
   "Schema1": [
   {"cR": 0 , "cB": 100 , "cG": 0},
   {"cR": 0 , "cB": 100 , "cG": 0},
@@ -286,38 +286,4 @@
   ]
   
   
-  }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  }  

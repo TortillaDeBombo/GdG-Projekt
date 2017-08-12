@@ -8,12 +8,12 @@ import controller.AniImporter;
 import controller.CustomAnimation;
 import controller.CustomAnimationCircle;
 import controller.CustomAnimationColor;
-import controller.CustomAnimationVelocity;
 import de.looksgood.ani.Ani;
 import processing.core.PApplet;
 import processing.core.PConstants;
 import processing.core.PShape;
 import objects.ParticleCircle;
+import de.uulm.mi.gdg.*;
 
 public class Circle implements Entity {
 
@@ -22,32 +22,52 @@ public class Circle implements Entity {
 	private static ArrayList<ParticleCircle> deadCircles;
 	private ArrayList<CustomAnimation> anis;
 	private ArrayList<CustomAnimationCircle> anis2;
-	private ArrayList<CustomAnimationVelocity> anis3;
 	private ArrayList<CustomAnimationColor> anis4;
+	private ArrayList<Integer> schemes;
 	private CustomAnimation ani;
 	private int Circles = 0;
 	int i = 0;
+	String command;
+	GUI gui;
+	Equalizer e = new Equalizer();
+	
 	
 	public Circle(PApplet _parent) {
 
 		circles = new ArrayList<ParticleCircle>();
 		deadCircles = new ArrayList<ParticleCircle>();
 		canvas = _parent;
-
-		startAnimation(Farbe);
+		
+		startAnimation();
 
 	}
 
 	public void startAnimation() {
+		
 		anis = AniImporter.importAnimation(canvas, "./data/timing/timing.json", "Circles");
 		anis2 = AniImporter.importAnimationData(canvas, "./data/timing/timing.json", "Data");
-		anis3 = AniImporter.importAnimationVelocity(canvas, "./data/timing/timing.json", "Velocity");
-		anis4 = AniImporter.importAnimationColor(canvas, "./data/timing/timing.json", Farbe);
+	
+	}
+	public void startAnimation(String s) {
+		switch(s) {
+		case "Schema1":
+			anis4 = AniImporter.importAnimationColor(canvas, "./data/timing/timing.json", "Schema1");
+			break;
+		case "Schema2":
+			anis4 = AniImporter.importAnimationColor(canvas, "./data/timing/timing.json", "Schema2");
+		    break;
+		case "Schema3":
+			anis4 = AniImporter.importAnimationColor(canvas, "./data/timing/timing.json", "Schema3");
+			break;
+		default:
+			anis4 = AniImporter.importAnimationColor(canvas, "./data/timing/timing.json", "Schema1");
+			break;
+		}
 	}
 
 	public void spawn() {
 		for (; Circles > 0; Circles--) {
-			circles.add(new ParticleCircle(canvas, anis, anis2, anis3, anis4, i));
+			circles.add(new ParticleCircle(0,200,canvas, anis, anis2, anis4, i));
 			if (i < anis2.size()) {
 				i++;
 			}
@@ -64,7 +84,6 @@ public class Circle implements Entity {
 	public void update() {
 		for (ParticleCircle p : circles) {
 			p.update();
-			p.Bouncing;
 		}
 		circles.removeAll(deadCircles);
 		deadCircles.clear();

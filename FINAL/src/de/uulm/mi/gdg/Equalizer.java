@@ -149,21 +149,21 @@ public class Equalizer extends PApplet {
 			cp5 = new ControlP5(canvas);
 
 			cp5.addButton("start").setPosition(width / 2 + 125, height - 175)
-					.setImages(loadImage("start.png"), loadImage("startgedrückt.png"), loadImage("start.png"))
+					.setImages(loadImage("start.png"), loadImage("startgedrï¿½ckt.png"), loadImage("start.png"))
 					.updateSize();
 			cp5.addButton("reflexion").setPosition(width / 2 - 200, height - 175).setImages(loadImage("Reflexion.png"),
-					loadImage("Reflexion gedrückt.png"), loadImage("Reflexion.png")).plugTo("bounceControl")
+					loadImage("Reflexion gedrï¿½ckt.png"), loadImage("Reflexion.png")).plugTo("bounceControl")
 					.updateSize();
 			cp5.addButton("Farbauswahl").setPosition(width / 2 - 120, 90).setImages(loadImage("Farbanzeige3.png"),
 					loadImage("Farbanzeige2.png"), loadImage("Farbanzeige1.png")).plugTo("dontknowyet").updateSize();
 			cp5.addButton("Schema1").setPosition(width / 2 - 200, height / 2).setImages(loadImage("Schemaauswahl1.png"),
-					loadImage("Schemaauswahl1 gedrückt.png"), loadImage("Schemaauswahl1.png")).updateSize();
+					loadImage("Schemaauswahl1 gedrï¿½ckt.png"), loadImage("Schemaauswahl1.png")).updateSize();
 			cp5.addButton("Schema2").setPosition(((width / 2 + 125) + width / 2 - 200) / 2, height / 2)
-					.setImages(loadImage("Schemaauswahl2.png"), loadImage("Schemaauswahl2 gedrückt.png"),
+					.setImages(loadImage("Schemaauswahl2.png"), loadImage("Schemaauswahl2 gedrï¿½ckt.png"),
 							loadImage("Schemaauswahl2.png"))
 					.updateSize();
 			cp5.addButton("Schema3").setPosition(width / 2 + 125, height / 2).setImages(loadImage("Schemaauswahl3.png"),
-					loadImage("Schemaauswahl3 gedrückt.png"), loadImage("Schemaauswahl3.png")).updateSize();
+					loadImage("Schemaauswahl3 gedrï¿½ckt.png"), loadImage("Schemaauswahl3.png")).updateSize();
 
 		}
 	}
